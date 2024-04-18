@@ -4,27 +4,11 @@ import java.util.Scanner;
 
 public class HomeWork1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число от 1 до 5");
-        int n = scanner.nextInt();
         greetings();
         checkSign();
         selectColor();
         compareNumbers();
         addOrSubtractAndPrint (7,2,false);
-        if (n == 1) {
-            System.out.println();
-        } else if (n == 2) {
-            System.out.println();
-        } else if (n == 3) {
-        System.out.println();
-        } else if (n == 4) {
-            System.out.println();
-        } else if (n == 5) {
-            System.out.println();
-        } else {
-            System.out.println("Такой оперции нет");
-        }
     }
     public static void greetings() {
         System.out.println("Hello\nWorld\nfrom\nJava");
