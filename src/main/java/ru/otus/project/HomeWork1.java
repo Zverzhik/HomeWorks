@@ -1,7 +1,7 @@
 package ru.otus.project;
-
 public class HomeWork1 {
     public static void main(String[] args) {
+
         greetings();
         checkSign();
         selectColor();
