@@ -17,7 +17,7 @@ public class HomeWork3 {
         int[][] array = new int[][]{{2, -9, 10}, {0, -1, 4, 11}};
         System.out.println(fingMax(array));
 
-        System.out.println(sumSecondHeight(new int[][]{{1, 2, 3}, {-1, 3, 2}}));
+        System.out.println(sumSecondHeight(new int[][]{{1, 2, 4}, {-1, 3, 2}}));
     }
 
 
@@ -77,13 +77,14 @@ public class HomeWork3 {
     }
 
     public static int sumSecondHeight(int[][] input) {
+        if (input.length < 2) {
+            return -1;
+        }
         int sum = 0;
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input[i].length; j++) {
                 if (i == 1) {
                     sum += input[i][j];
-                } else if (i != 1) {
-                    sum = -1;
                 }
             }
         }
