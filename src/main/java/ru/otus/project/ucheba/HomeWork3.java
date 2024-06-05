@@ -35,11 +35,9 @@ public class HomeWork3 {
 
 
     public static void squarePrint(int[][] size) {
-        char defaultSize = '*';
         for (int i = 0; i < size.length; i++) {
             for (int j = 0; j < size[i].length; j++) {
-                size[i][j] = '*';
-                System.out.print(defaultSize);
+                System.out.print('*');
             }
             System.out.println();
         }
@@ -52,8 +50,8 @@ public class HomeWork3 {
                 in[i][j] = value;
             }
         }
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < in.length; i++) {
+            for (int j = 0; j < in[i].length; j++) {
                 if (i == j) {
                     in[i][j] = 'O';
                 }
@@ -81,11 +79,9 @@ public class HomeWork3 {
             return -1;
         }
         int sum = 0;
-        for (int i = 0; i < input.length; i++) {
-            for (int j = 0; j < input[i].length; j++) {
-                if (i == 1) {
-                    sum += input[i][j];
-                }
+        for (int i = 1; i < input.length; i++) {
+            for (int j = 0; j < input[1].length; j++) {
+                    sum += input[1][j];
             }
         }
         return sum;
