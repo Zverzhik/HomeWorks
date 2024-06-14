@@ -79,11 +79,9 @@ public class HomeWork3 {
             return -1;
         }
         int sum = 0;
-        for (int i = 1; i < input.length; i++) {
             for (int j = 0; j < input[1].length; j++) {
                     sum += input[1][j];
             }
-        }
         return sum;
     }
 }
