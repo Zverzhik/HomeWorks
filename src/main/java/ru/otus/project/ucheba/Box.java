@@ -27,32 +27,32 @@ public class Box {
         this.height = 7;
     }
 
-    public void openBox() {
+    public void open(boolean isOpened) {
         System.out.println("Коробка открыта");
-    };
-    public void closeBox() {
+    }
+    public void close() {
         System.out.println("Коробка закрыта");
     }
     public void info() {
         System.out.println("Коробка " + color + " с размерами " + length + "x" + width + "x" + height);
     }
-    public void putInBox(String item) {
+    public void putIn(String item) {
         this.item = item;
-        openBox();
-        Box[] contant = new Box[5];
-        for (int i = 0; i < contant.length ; i++) {
-            if (contant[i] == null) {
+        boolean isOpened = true;
+        String[] items = new String[5];
+        for (int i = 0; i < items.length ; i++) {
+            if (items[i] == null) {
                 System.out.println("Положить в коробку " + item);
             }
         }
     }
-    public void getFromBox(String item) {
+    public void getFrom(String item) {
         this.item = item;
-        openBox();
-        Box[] contant = new Box[5];
-        for (int i = 0; i < contant.length ; i++) {
-            if (item.equals(contant[i])) {
-                contant[i] = null;
+        boolean isOpened = true;
+        String[] items = new String[5];
+        for (int i = 0; i < items.length ; i++) {
+            if (item.equals(items[i])) {
+                items[i] = null;
             System.out.println("Взять из коробки " + item);
             }
         }
