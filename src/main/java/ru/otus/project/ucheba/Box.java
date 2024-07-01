@@ -5,6 +5,7 @@ public class Box {
     private int length;
     private int width;
     private int height;
+    private boolean isOpened;
     private String item;
 
     public void setColor(String color) {
@@ -27,7 +28,7 @@ public class Box {
         this.height = 7;
     }
 
-    public void open(boolean isOpened) {
+    public void open() {
         System.out.println("Коробка открыта");
     }
     public void close() {
@@ -38,23 +39,29 @@ public class Box {
     }
     public void putIn(String item) {
         this.item = item;
-        boolean isOpened = true;
-        String[] items = new String[5];
-        for (int i = 0; i < items.length ; i++) {
-            if (items[i] == null) {
-                System.out.println("Положить в коробку " + item);
+        if (isOpened) {
+            String[] items = new String[5];
+            for (int i = 0; i < items.length; i++) {
+                if (items[i] == null) {
+                    System.out.println("Положить в коробку " + item);
+                }
             }
+        } else {
+            System.out.println("Сначала откройте коробку!");
         }
     }
     public void getFrom(String item) {
         this.item = item;
-        boolean isOpened = true;
-        String[] items = new String[5];
-        for (int i = 0; i < items.length ; i++) {
-            if (item.equals(items[i])) {
-                items[i] = null;
-            System.out.println("Взять из коробки " + item);
+        if (isOpened) {
+            String[] items = new String[5];
+            for (int i = 0; i < items.length; i++) {
+                if (item.equals(items[i])) {
+                    items[i] = null;
+                    System.out.println("Взять из коробки " + item);
+                }
             }
+        } else {
+            System.out.println("Сначала откройте коробку!");
         }
     }
 }
