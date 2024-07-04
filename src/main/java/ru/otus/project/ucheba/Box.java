@@ -29,39 +29,30 @@ public class Box {
     }
 
     public void open() {
-        System.out.println("Коробка открыта");
-    }
+        isOpened = true;
+            System.out.println("Коробка открыта");
+        }
     public void close() {
+        isOpened = false;
         System.out.println("Коробка закрыта");
     }
     public void info() {
         System.out.println("Коробка " + color + " с размерами " + length + "x" + width + "x" + height);
     }
     public void putIn(String item) {
-        this.item = item;
-        if (isOpened) {
-            String[] items = new String[5];
-            for (int i = 0; i < items.length; i++) {
-                if (items[i] == null) {
-                    System.out.println("Положить в коробку " + item);
-                }
-            }
+        if (this.item != null) {
+            System.out.println("В коробке лежит предмет");
         } else {
-            System.out.println("Сначала откройте коробку!");
+            this.item = item;
+            System.out.println("Положить в коробку " + item);
         }
     }
     public void getFrom(String item) {
-        this.item = item;
-        if (isOpened) {
-            String[] items = new String[5];
-            for (int i = 0; i < items.length; i++) {
-                if (item.equals(items[i])) {
-                    items[i] = null;
-                    System.out.println("Взять из коробки " + item);
-                }
-            }
+        if (item == null) {
+            System.out.println("В коробке нет предмета");
         } else {
-            System.out.println("Сначала откройте коробку!");
+            item = null;
+            System.out.println("Взять из коробки " + item);
         }
     }
 }
