@@ -40,6 +40,10 @@ public class Box {
         System.out.println("Коробка " + color + " с размерами " + length + "x" + width + "x" + height);
     }
     public void putIn(String item) {
+        if (!isOpened) {
+            System.out.println("Коробка закрыта!");
+            return;
+        }
         if (this.item != null) {
             System.out.println("В коробке лежит предмет");
         } else {
@@ -48,6 +52,10 @@ public class Box {
         }
     }
     public void getFrom(String item) {
+        if (!isOpened) {
+            System.out.println("Коробка закрыта!");
+            return;
+        }
         if (item == null) {
             System.out.println("В коробке нет предмета");
         } else {
