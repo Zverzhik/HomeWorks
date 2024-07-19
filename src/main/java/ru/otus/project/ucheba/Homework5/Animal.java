@@ -18,25 +18,21 @@ public class Animal {
     }
 
     public int run(int distance) {
-        if (stamina < distance) {
+        if (stamina < distance * staminaRunCost) {
             System.out.println(name + " устала");
             return -1;
-        } else if (stamina > distance) {
-            System.out.println(name + " не устанет бегать, так как дистанция короткая для такой выносливости");
-            return -1;
         }
-        stamina -= distance;
+        stamina -= distance * staminaRunCost;
         return distance / speedRunning;
     }
+
     public int swim(int distance) {
         if (speedSwimming == 0) {
             System.out.println(name + " не умеет плавать");
             return -1;
-        } else if (stamina < distance * staminaSwimCost) {
+        }
+        if (stamina < distance * staminaSwimCost) {
             System.out.println(name + " устала");
-            return -1;
-        } else if (stamina > distance * staminaSwimCost) {
-            System.out.println(name + " не устанет плавать, так как дистанция короткая для такой выносливости");
             return -1;
         }
         stamina -= distance * staminaSwimCost;
@@ -44,6 +40,6 @@ public class Animal {
     }
 
     public void info() {
-        System.out.println("Вынослвость " + name + " составила: " + stamina + " условных единиц");
+        System.out.println("Выносливость " + name + " составила: " + stamina + " условных единиц");
     }
 }
