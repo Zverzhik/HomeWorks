@@ -14,11 +14,10 @@ public class Main {
         System.out.println(plate);
 
         for (int i = 0; i < cats.length; i++) {
-            if (plate.foodAmountCurrent > cats[i].appetite) {
+            if (plate.foodAmountCurrent >= cats[i].appetite) {
                 cats[i].eat(plate);
-            } else if (plate.foodAmountCurrent < cats[i].appetite) {
-                System.out.println("Следующему коту не хватает еды, добавьте еду в тарелкуы");
             }
+            System.out.println("Следующему коту не хватает еды, добавьте еду в тарелку");
         }
     }
 }

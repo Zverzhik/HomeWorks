@@ -1,9 +1,9 @@
 package ru.otus.project.ucheba.Homework6;
 
 public class Cat {
-    String name;
-    int appetite;
-    boolean isFull;
+    private String name;
+    public int appetite;
+    private boolean isFull;
 
     public Cat(String name, int appetite) {
         this.name = name;

@@ -1,8 +1,8 @@
 package ru.otus.project.ucheba.Homework6;
 
 public class Plate {
-    int foodAmountMax;
-    int foodAmountCurrent;
+    private int foodAmountMax;
+    public int foodAmountCurrent;
 
     public Plate(int foodAmountMax, int foodAmountCurrent) {
         this.foodAmountMax = foodAmountMax;
