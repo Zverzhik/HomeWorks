@@ -1,7 +1,7 @@
 package ru.otus.project.ucheba.Homework7;
 
 public enum TerrainType {
-    DENSEFORREST ("Густой лес"),
+    DENSE_FORREST("Густой лес"),
     PLAIN ("Равнина"),
     SWAMP ("Болото");
 

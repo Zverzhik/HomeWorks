@@ -13,11 +13,7 @@ public class Car implements Transport {
 
     @Override
     public boolean move(TerrainType area, int distance) {
-        if (area == TerrainType.DENSEFORREST) {
-            System.out.println("Машина не может перемещаться по данной местности");
-            return false;
-        }
-        if (area == TerrainType.SWAMP) {
+        if (area == TerrainType.DENSE_FORREST || area == TerrainType.SWAMP) {
             System.out.println("Машина не может перемещаться по данной местности");
             return false;
         }

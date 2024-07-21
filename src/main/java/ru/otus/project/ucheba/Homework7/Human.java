@@ -19,7 +19,6 @@ public class Human {
         currentTransport = transport;
         System.out.println(name + " сел в транспорт " + transport);
     }
-
     public void release(Transport transport) {
         currentTransport = null;
         System.out.println(name + " покинул " + transport);

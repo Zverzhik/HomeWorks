@@ -6,7 +6,7 @@ public class Bicycle implements Transport {
     @Override
     public boolean move(TerrainType area, int distance) {
         if (area == TerrainType.SWAMP) {
-            System.out.println("Машина не может перемещаться по данной местности");
+            System.out.println("Велосипед не может перемещаться по данной местности");
             return false;
         }
         System.out.println("Велосипед преодолел " + distance + " км по местности " + area.getName());

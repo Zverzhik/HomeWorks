@@ -13,6 +13,7 @@ public class Horse implements Transport {
 
     @Override
     public boolean move(TerrainType area, int distance) {
+        int energyRequired = distance * energyWaste;
         if (area == TerrainType.SWAMP) {
             System.out.println("Лошадь не может перемещаться по данной местности");
             return false;
@@ -21,11 +22,11 @@ public class Horse implements Transport {
             System.out.println("У лошади не хватает энергии, движение не возможно");
             return false;
         }
-        if (energy < (distance * energyWaste)) {
+        if (energy < energyRequired) {
             System.out.println("У лошади не хватит энергии, чтобы преодолеть " + distance + " км" + "\nКоличество энергии: " + energy + " лошадиных сил");
             return false;
         }
-        energy -= (distance * energyWaste);
+        energy -= energyRequired;
         System.out.println("Лошадь преодолела " + distance + " км по местности " + area.getName() + "\nУшло на такую поездку " + (distance * energyWaste) + " лошадиных сил" + "\nОстаток энергии: " + energy + " лошадиных сил");
         return true;
     }
