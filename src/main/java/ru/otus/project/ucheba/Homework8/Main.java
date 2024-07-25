@@ -6,17 +6,17 @@ public class Main {
         String[][] errorSizeArray = {{"1","2","3","4"},{"6","4","2"},{"0","2"},{"9","1","5","1"}};
         String[][] errorCharArray = {{"1","2","3","4"},{"6","9","2","0"},{"0","2","1","3"},{"9","cat","5","1"}};
         try {
-            System.out.println("Сумма всех элементов массива равна " + Converter.convectrInt(correctArray));
+            System.out.println("Сумма всех элементов массива равна " + сonvertToInt.convectrInt(correctArray));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
-            System.out.println("Сумма всех элементов массива равна " + Converter.convectrInt(errorSizeArray));
+            System.out.println("Сумма всех элементов массива равна " + сonvertToInt.convectrInt(errorSizeArray));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
-            System.out.println("Сумма всех элементов массива равна " + Converter.convectrInt(errorCharArray));
+            System.out.println("Сумма всех элементов массива равна " + сonvertToInt.convectrInt(errorCharArray));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
