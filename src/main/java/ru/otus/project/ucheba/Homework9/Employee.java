@@ -19,7 +19,7 @@ public class Employee {
         return age;
     }
 
-    public static List<String> Names (List<Employee> staff) {
+    public static List<String> names(List<Employee> staff) {
         List<String> staffNames = new ArrayList<>();
         for (Employee employee : staff) {
             if (employee != null) {
@@ -29,7 +29,7 @@ public class Employee {
         return staffNames;
     }
 
-    public static List<String> MinAgeStaff (List<Employee> staff, int minAge) {
+    public static List<String> minAgeStaff(List<Employee> staff, int minAge) {
         List<String> minAgeStaff = new ArrayList<>();
         for (Employee employee : staff) {
             if (employee != null) {
@@ -42,7 +42,7 @@ public class Employee {
     }
 
     public static boolean checkMiddleAverageAgeStaff (List<Employee> staff, int minAverageAge) {
-        int averageAge = 0;
+        double averageAge = 0;
         for (Employee employee : staff) {
             if (employee != null) {
                 averageAge += employee.getAge();

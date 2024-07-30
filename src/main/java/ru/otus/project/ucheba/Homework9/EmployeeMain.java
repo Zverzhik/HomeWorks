@@ -22,10 +22,10 @@ public class EmployeeMain extends Employee {
         staff.add(employee4);
         staff.add(employee5);
 
-        List<String> staffNames = Names(staff);
+        List<String> staffNames = names(staff);
         System.out.println(staffNames);
 
-        List<String> minAgeStaff = MinAgeStaff(staff, 30);
+        List<String> minAgeStaff = minAgeStaff(staff, 30);
         System.out.println(minAgeStaff);
 
         boolean averageAgeStaff = checkMiddleAverageAgeStaff(staff,42);
