@@ -16,10 +16,11 @@ public class PhoneBook {
         }
     }
     public void find(String fullname) {
-        for (Map.Entry<String,Set<String>> entry : phoneBook.entrySet()) {
-            if (fullname.equals(entry.getKey())) {
-                System.out.println(entry.getValue());
-            }
+        Set<String> phones = phoneBook.get(fullname);
+        if (phones != null) {
+            System.out.println(phones);
+        } else {
+            System.out.println("Контакт не найден.");
         }
     }
     public boolean containsPhoneNumber(String phoneNumber) {
