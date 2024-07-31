@@ -1,13 +1,14 @@
 package ru.otus.project.ucheba.Homework11;
 
+import java.util.HashMap;
 import java.util.Map;
 import ru.otus.project.ucheba.Homework11.Position;
 
 public class PersonDataBase {
     private final Map<Long, Person> list;
 
-    public PersonDataBase(Map<Long, Person> list) {
-        this.list = list;
+    public PersonDataBase() {
+        this.list = new HashMap<>();
     }
 
     public Person findByld(Long id) {
@@ -20,7 +21,12 @@ public class PersonDataBase {
         return person.getPosition().isManager();
     }
     public boolean isEmployee(Long id) {
-        return findByld(id).getPosition().isEmployee();
+        if (id != null) {
+            return findByld(id).getPosition().isEmployee();
+        } else {
+            System.out.println("ID не найден!");
+            return false;
+        }
     }
 
     @Override
