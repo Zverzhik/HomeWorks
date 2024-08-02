@@ -21,10 +21,10 @@ public class PersonDataBase {
         return person.getPosition().isManager();
     }
     public boolean isEmployee(Long id) {
-        if (id != null) {
+        Person person = findByld(id);
+        if (id != null && findByld(id) != null) {
             return findByld(id).getPosition().isEmployee();
         } else {
-            System.out.println("ID не найден!");
             return false;
         }
     }

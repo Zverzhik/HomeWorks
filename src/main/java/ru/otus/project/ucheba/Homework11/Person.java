@@ -23,8 +23,6 @@ public class Person {
         return id;
     }
 
-
-
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
