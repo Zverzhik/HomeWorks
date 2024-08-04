@@ -6,12 +6,12 @@ import java.util.*;
 public class MainIO {
     public static void main(String[] args) {
         File file;
-        String path = "src";
+        final String PATH = "src";
 
-        getFiles(path);
+        getFiles(PATH);
         System.out.println();
 
-        file = requestFile(path);
+        file = requestFile(PATH);
         readingFile(file);
         System.out.println();
 
@@ -46,6 +46,7 @@ public class MainIO {
         do {
             System.out.print("Введите имя файла: ");
             file = new File(dir, scanner.next());
+            scanner.close();
         } while (!isFileExist(file));
         return file;
     }
@@ -54,11 +55,10 @@ public class MainIO {
         if (!isFileExist(file)) {
             return;
         }
-        try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(file))) {
-            int n = in.read();
-            while (n != -1) {
-                System.out.print((char) n);
-                n = in.read();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,6 +72,7 @@ public class MainIO {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите текст для записи в файл: ");
         String text = scanner.nextLine();
+        scanner.close();
         try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file, true))) {
             byte[] buffer = text.getBytes(StandardCharsets.UTF_8);
             for (int i = 0; i < buffer.length; i++) {
